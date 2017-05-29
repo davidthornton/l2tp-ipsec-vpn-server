@@ -108,9 +108,9 @@ conn l2tp-psk
 conn xauth-psk
   auto=add
   leftsubnet=0.0.0.0/0
-  rightsubnet=$RIGHT_SUBNET
-  modecfgdns1=$DNS1
-  modecfgdns2=$DNS2
+  rightsubnet=$VPN_RIGHT_SUBNET
+  modecfgdns1=$VPN_DNS1
+  modecfgdns2=$VPN_DNS2
   leftxauthserver=yes
   rightxauthclient=yes
   leftmodecfgserver=yes
@@ -148,8 +148,8 @@ EOF
 cat > /etc/ppp/options.xl2tpd <<EOF
 ipcp-accept-local
 ipcp-accept-remote
-ms-dns $DNS1
-ms-dns $DNS2
+ms-dns $VPN_DNS1
+ms-dns $VPN_DNS2
 noccp
 auth
 crtscts
